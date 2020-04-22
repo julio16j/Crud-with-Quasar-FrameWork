@@ -26,12 +26,12 @@ export default {
         {
           id:1,
           nome: "Neymar",
-          poder: 91
+          forca: 91
         },
         {
           id:2,
           nome: "Messi",
-          poder: 93
+          forca: 93
         }
      ],
      jogadorSelecionado: null,
@@ -53,20 +53,23 @@ export default {
       this.lista = aux;
     },
     toogleCadastro(){
-      this.mostraCadastro = !this.mostraCadastro;
+      if(!this.mostraEdicao)
+        this.mostraCadastro = !this.mostraCadastro;
     },
     toogleEditar(jogador){
-      if(jogador != undefined && jogador != null){
-        this.jogadorSelecionado = jogador;
-        this.mostraEdicao = !this.mostraEdicao;
+      if(!this.mostraCadastro){
+        if(jogador != undefined && jogador != null){
+          this.jogadorSelecionado = jogador;
+          this.mostraEdicao = !this.mostraEdicao;
+        }
+        else this.mostraEdicao = false
       }
-      else this.mostraEdicao = false
     },
     salvarJogador(jogador){
       this.lista.forEach(j => {
         if(j.id == jogador.id ) {
           j.nome = jogador.nome;
-          j.poder = jogador.poder;
+          j.forca = jogador.forca;
         }
       })
       this.mostraEdicao = false;

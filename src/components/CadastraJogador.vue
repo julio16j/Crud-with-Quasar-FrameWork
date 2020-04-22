@@ -1,5 +1,6 @@
 <template>
   <q-form  @submit="onSubmit" class="formBox">
+      <h6>Cadastro de Jogador</h6>
       <div>
         <q-input
         name="name"
@@ -13,10 +14,10 @@
 
       <div>
         <q-input
-        name="poder"
-        v-model="poder"
+        name="forca"
+        v-model="forca"
         color="primary"
-        label="Poder"
+        label="Força"
         filled
         clearable
         class="mgTopBot10"
@@ -38,12 +39,12 @@ export default {
   data() {
     return {
       nome: "",
-      poder: ""
+      forca: ""
     }
   },
   methods: {
     onSubmit() {
-      const jogador = {nome:this.nome, poder: this.poder}
+      const jogador = {nome:this.nome, forca: this.forca}
       this.$emit('adicionar-jogador', jogador);
     }
   }
@@ -68,7 +69,7 @@ a {
 }
 .formBox{
   width: 60%;
-  margin-top: 10px
+  margin-top: 10px;
 }
 .mgTopBot10{
   margin-top: 10px;

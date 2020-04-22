@@ -58,11 +58,11 @@ export default {
         },
 
         {
-          name: 'poder',
+          name: 'forca',
           required: true,
-          label: 'Poder',
+          label: 'Força',
           align: 'left',
-          field: row => row.poder,
+          field: row => row.forca,
           format: val => `${val}`,
           sortable: true
         },
