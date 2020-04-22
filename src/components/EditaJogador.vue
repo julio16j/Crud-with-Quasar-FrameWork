@@ -31,20 +31,20 @@
 
 <script>
 export default {
-  name: 'CadastraJogador',
+  name: 'EditaJogador',
   props: {
-    msg: String
+    jogador:Object
   },
   data() {
     return {
-      nome: "",
-      poder: ""
+      nome : this.jogador.nome,
+      poder: this.jogador.poder
     }
   },
   methods: {
     onSubmit() {
-      const jogador = {nome:this.nome, poder: this.poder}
-      this.$emit('adicionar-jogador', jogador);
+      const jogador = {id:this.jogador.id, nome:this.nome, poder: this.poder}
+      this.$emit('salvar-jogador', jogador);
     }
   }
 }
